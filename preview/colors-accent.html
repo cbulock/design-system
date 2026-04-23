@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); }
+  .scale { display: grid; grid-template-columns: repeat(9, 1fr); gap: 2px; }
+  .swatch { aspect-ratio: 1/1.4; border-radius: 3px; display: flex; align-items: flex-end; padding: 6px; font-family: var(--font-mono); font-size: 9px; color: rgba(255,255,255,0.9); }
+  .swatch.light { color: rgba(0,0,0,0.55); }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="label">Amber · burnt orange · 500 is primary</div>
+  <div class="scale">
+    <div class="swatch light" style="background:#fdf4ec">50</div>
+    <div class="swatch light" style="background:#fae2cd">100</div>
+    <div class="swatch light" style="background:#f4c496">200</div>
+    <div class="swatch light" style="background:#ec9f59">300</div>
+    <div class="swatch" style="background:#e07d2c">400</div>
+    <div class="swatch" style="background:#c2410c;outline:2px solid var(--fg);outline-offset:2px">500</div>
+    <div class="swatch" style="background:#9a340a">600</div>
+    <div class="swatch" style="background:#7a2a09">700</div>
+    <div class="swatch" style="background:#5c2108">800</div>
+  </div>
+</body>
+</html>

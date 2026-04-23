@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .menu {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 12px 24px -8px rgba(9,9,11,0.10), 0 4px 8px -4px rgba(9,9,11,0.06);
+    padding: 4px; min-width: 200px;
+  }
+  .item {
+    display: flex; align-items: center; gap: 8px; padding: 7px 10px;
+    font-size: 13px; color: var(--fg); border-radius: 6px; cursor: pointer;
+    justify-content: space-between;
+  }
+  .item:hover { background: var(--bg-muted); }
+  .item.active { background: var(--accent-muted); color: var(--accent-press); }
+  .shortcut { font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); letter-spacing: 0.02em; }
+  .sep { height: 1px; background: var(--border-muted); margin: 4px 0; }
+  .tt {
+    background: var(--gray-950); color: var(--gray-50); font-size: 11px;
+    padding: 5px 8px; border-radius: 6px; position: relative;
+    box-shadow: 0 4px 8px rgba(9,9,11,0.15);
+  }
+  .tt::after {
+    content:''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%) rotate(45deg);
+    width: 8px; height: 8px; background: var(--gray-950);
+  }
+  .kbd {
+    font-family: var(--font-mono); font-size: 10px; background: var(--bg-muted); color: var(--fg-muted);
+    border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; box-shadow: 0 1px 0 var(--border);
+  }
+</style>
+</head>
+<body>
+  <div class="menu">
+    <div class="item"><span>New file</span><span class="shortcut">⌘N</span></div>
+    <div class="item active"><span>Duplicate</span><span class="shortcut">⌘D</span></div>
+    <div class="item"><span>Rename</span></div>
+    <div class="sep"></div>
+    <div class="item" style="color:var(--danger)"><span>Delete</span><span class="shortcut">⌫</span></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px;align-items:center">
+    <div class="tt">Quick tip</div>
+    <div style="display:flex;gap:4px;align-items:center"><span class="kbd">⌘</span><span class="kbd">K</span></div>
+  </div>
+</body>
+</html>

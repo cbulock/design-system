@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 32px 24px; background: var(--bg-subtle); display: flex; gap: 24px; align-items: center; justify-content: space-around; }
+  .r { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box { width: 72px; height: 72px; background: #fff; border-radius: 12px; border: 1px solid var(--border-muted); }
+  .xs { box-shadow: 0 1px 1px rgba(9,9,11,0.04); }
+  .sm { box-shadow: 0 1px 2px rgba(9,9,11,0.06), 0 1px 1px rgba(9,9,11,0.04); }
+  .md { box-shadow: 0 4px 8px -2px rgba(9,9,11,0.06), 0 2px 4px -2px rgba(9,9,11,0.04); }
+  .lg { box-shadow: 0 12px 24px -8px rgba(9,9,11,0.10), 0 4px 8px -4px rgba(9,9,11,0.06); }
+  .xl { box-shadow: 0 24px 48px -12px rgba(9,9,11,0.16), 0 8px 16px -8px rgba(9,9,11,0.08); }
+  .label { font-family: var(--font-mono); font-size: 10px; color: #52525b; }
+  .name { font-family: var(--font-mono); font-size: 11px; color: #0a0a0c; }
+</style>
+</head>
+<body>
+  <div class="r"><div class="box xs"></div><span class="name">xs</span><span class="label">hairline</span></div>
+  <div class="r"><div class="box sm"></div><span class="name">sm</span><span class="label">resting</span></div>
+  <div class="r"><div class="box md"></div><span class="name">md</span><span class="label">hover</span></div>
+  <div class="r"><div class="box lg"></div><span class="name">lg</span><span class="label">popover</span></div>
+  <div class="r"><div class="box xl"></div><span class="name">xl</span><span class="label">modal</span></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- Shared base for all preview cards. Not a card itself. -->
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+  }
+  .card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 100%;
+  }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+  .mono { font-family: var(--font-mono); }
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-subtle);
+  }
+</style>

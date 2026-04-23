@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); }
+  .scale { display: grid; grid-template-columns: repeat(13, 1fr); gap: 2px; }
+  .swatch { aspect-ratio: 1/1.4; border-radius: 3px; display: flex; align-items: flex-end; padding: 6px; font-family: var(--font-mono); font-size: 9px; color: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.04); }
+  .swatch.light { color: rgba(0,0,0,0.55); }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="label">Neutral · warm gray · 50 → 950</div>
+  <div class="scale">
+    <div class="swatch light" style="background:#faf9f6">50</div>
+    <div class="swatch light" style="background:#f3f1ec">100</div>
+    <div class="swatch light" style="background:#e9e6de">150</div>
+    <div class="swatch light" style="background:#dcd8cc">200</div>
+    <div class="swatch light" style="background:#b8b3a2">300</div>
+    <div class="swatch light" style="background:#878273">400</div>
+    <div class="swatch" style="background:#5e5a4e">500</div>
+    <div class="swatch" style="background:#42403a">600</div>
+    <div class="swatch" style="background:#2c2a26">700</div>
+    <div class="swatch" style="background:#1d1c19">800</div>
+    <div class="swatch" style="background:#161512">850</div>
+    <div class="swatch" style="background:#0f0e0c">900</div>
+    <div class="swatch" style="background:#080706">950</div>
+  </div>
+</body>
+</html>

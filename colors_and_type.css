@@ -1,0 +1,244 @@
+/* ============================================================
+   Quiet v3 — Terminal / hairline / amber
+   Mona Sans + JetBrains Mono · burnt orange · phosphor green
+   Teenage Engineering / Linear-terminal energy
+   ============================================================ */
+
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('./fonts/MonaSans-Variable.woff2') format('woff2-variations'),
+       url('./fonts/MonaSans-Variable.woff2') format('woff2');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./fonts/JetBrainsMono-Variable.woff2') format('woff2-variations'),
+       url('./fonts/JetBrainsMono-Variable.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   BASE SCALES
+   ============================================================ */
+:root {
+  /* Neutral — warm gray, very slight amber undertone */
+  --gray-50:  #faf9f6;
+  --gray-100: #f3f1ec;
+  --gray-150: #e9e6de;
+  --gray-200: #dcd8cc;
+  --gray-300: #b8b3a2;
+  --gray-400: #878273;
+  --gray-500: #5e5a4e;
+  --gray-600: #42403a;
+  --gray-700: #2c2a26;
+  --gray-800: #1d1c19;
+  --gray-850: #161512;
+  --gray-900: #0f0e0c;
+  --gray-950: #080706;
+
+  /* Burnt orange accent — primary */
+  --amber-50:  #fdf4ec;
+  --amber-100: #fae2cd;
+  --amber-200: #f4c496;
+  --amber-300: #ec9f59;
+  --amber-400: #e07d2c;
+  --amber-500: #c2410c;  /* primary */
+  --amber-600: #9a340a;
+  --amber-700: #7a2a09;
+  --amber-800: #5c2108;
+  --amber-900: #3e1706;
+
+  /* Phosphor green — success / live indicator only */
+  --phosphor: #7ac74f;
+  --phosphor-dim: #3d6a29;
+
+  /* Semantic (muted) */
+  --red-500: #b91c1c;
+  --amber-warn: #d4a017;  /* mustard/ochre — distinct from burnt orange */
+
+  /* Type */
+  --font-sans: 'Mona Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Scale — tighter, more utilitarian */
+  --text-2xs: 10px;
+  --text-xs:  11px;
+  --text-sm:  12px;
+  --text-base:13px;
+  --text-md:  14px;
+  --text-lg:  16px;
+  --text-xl:  20px;
+  --text-2xl: 26px;
+  --text-3xl: 34px;
+  --text-4xl: 46px;
+  --text-5xl: 64px;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.6;
+
+  --tracking-tightest: -0.03em;
+  --tracking-tighter:  -0.02em;
+  --tracking-tight:    -0.01em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.02em;
+  --tracking-mono:      -0.01em;
+
+  /* Spacing · 4px grid */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
+  --space-12: 48px; --space-16: 64px;
+
+  /* Radii — mostly sharp. Pills only on badges */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;     /* default buttons, inputs */
+  --radius-lg: 6px;     /* cards */
+  --radius-full: 9999px;
+
+  /* Shadows — almost none. Borders do the work */
+  --shadow-xs: 0 1px 0 rgba(15, 14, 12, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 14, 12, 0.06);
+  --shadow-md: 0 2px 8px rgba(15, 14, 12, 0.08);
+  --shadow-lg: 0 8px 24px rgba(15, 14, 12, 0.12);
+
+  /* Logo gradient — ONE quiet moment */
+  --gradient-mark: linear-gradient(135deg, #c2410c 0%, #7a2a09 100%);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 100ms;
+  --duration-base: 150ms;
+
+  --ring-focus: 0 0 0 2px var(--amber-500);
+}
+
+/* ============================================================
+   LIGHT — warm cream
+   ============================================================ */
+:root,
+[data-theme='light'] {
+  --bg:         #faf9f6;
+  --bg-subtle:  #f3f1ec;
+  --bg-muted:   #e9e6de;
+  --surface:         #ffffff;
+  --surface-raised:  #ffffff;
+  --surface-inverse: #0f0e0c;
+
+  --fg:         #0f0e0c;
+  --fg-muted:   #5e5a4e;
+  --fg-subtle:  #878273;
+  --fg-faint:   #b8b3a2;
+  --fg-on-accent: #ffffff;
+
+  --border:        #dcd8cc;
+  --border-strong: #b8b3a2;
+  --border-muted:  #e9e6de;
+  --border-hairline: rgba(15, 14, 12, 0.08);
+
+  --accent:       var(--amber-500);
+  --accent-hover: var(--amber-600);
+  --accent-press: var(--amber-700);
+  --accent-muted: var(--amber-50);
+  --accent-fg:    #ffffff;
+
+  --success: var(--phosphor-dim);
+  --warning: var(--amber-warn);
+  --danger:  var(--red-500);
+}
+
+/* ============================================================
+   DARK — terminal black + phosphor
+   ============================================================ */
+[data-theme='dark'] {
+  --bg:         #0f0e0c;
+  --bg-subtle:  #161512;
+  --bg-muted:   #1d1c19;
+  --surface:         #161512;
+  --surface-raised:  #1d1c19;
+  --surface-inverse: #faf9f6;
+
+  --fg:         #f3f1ec;
+  --fg-muted:   #b8b3a2;
+  --fg-subtle:  #878273;
+  --fg-faint:   #5e5a4e;
+
+  --border:        #2c2a26;
+  --border-strong: #42403a;
+  --border-muted:  #1d1c19;
+  --border-hairline: rgba(243, 241, 236, 0.08);
+
+  --accent:       var(--amber-400);
+  --accent-hover: var(--amber-300);
+  --accent-press: var(--amber-200);
+  --accent-muted: rgba(224, 125, 44, 0.12);
+  --accent-fg:    #0f0e0c;
+
+  --success: var(--phosphor);
+}
+
+/* ============================================================
+   SEMANTIC TYPE
+   ============================================================ */
+html {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body { color: var(--fg); background: var(--bg); margin: 0; }
+
+.h1, h1 { font-size: var(--text-4xl); font-weight: 600; line-height: 1.15; letter-spacing: var(--tracking-tightest); color: var(--fg); margin: 0; }
+.h2, h2 { font-size: var(--text-3xl); font-weight: 600; line-height: 1.18; letter-spacing: var(--tracking-tighter); color: var(--fg); margin: 0; }
+.h3, h3 { font-size: var(--text-xl); font-weight: 600; line-height: 1.3; letter-spacing: var(--tracking-tight); margin: 0; }
+.h4, h4 { font-size: var(--text-lg); font-weight: 600; line-height: 1.35; margin: 0; }
+
+.p, p { font-size: var(--text-base); line-height: var(--leading-relaxed); margin: 0; }
+.lead { font-size: var(--text-md); color: var(--fg-muted); line-height: 1.55; }
+.small, small { font-size: var(--text-sm); color: var(--fg-muted); }
+.caption { font-size: var(--text-xs); color: var(--fg-subtle); }
+.eyebrow {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+  color: var(--fg); letter-spacing: -0.005em;
+  padding-left: 10px; border-left: 2px solid var(--accent);
+  line-height: 1.3; display: inline-block;
+}
+
+.code, code, .mono { font-family: var(--font-mono); font-size: 0.92em; letter-spacing: var(--tracking-mono); }
+code {
+  background: var(--bg-muted); border: 1px solid var(--border-muted);
+  padding: 1px 6px; border-radius: var(--radius-xs); color: var(--fg);
+}
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--duration-base) var(--ease-out); }
+a:hover { border-bottom-color: var(--accent); }
+
+*, *::before, *::after { box-sizing: border-box; }
+::selection { background: var(--accent); color: #fff; }
+
+/* Terminal-grid background utility */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--border-hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-hairline) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.grid-bg-sm {
+  background-image:
+    linear-gradient(var(--border-hairline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-hairline) 1px, transparent 1px);
+  background-size: 16px 16px;
+}

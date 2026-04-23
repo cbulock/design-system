@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+    padding: 0 14px; height: 32px; border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid transparent; cursor: pointer; letter-spacing: -0.005em;
+    transition: all 150ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .secondary { background: var(--surface); color: var(--fg); border: 1px solid var(--border); }
+  .secondary:hover { border-color: var(--border-strong); background: var(--bg-subtle); }
+  .ghost { background: transparent; color: var(--fg); }
+  .ghost:hover { background: var(--bg-muted); }
+  .outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .outline:hover { background: var(--accent-muted); }
+  .danger { background: var(--danger); color: #fff; }
+  .sm { height: 26px; font-size: 12px; padding: 0 10px; }
+  .lg { height: 40px; font-size: 14px; padding: 0 18px; }
+  .mono-badge { font-family: var(--font-mono); font-size: 11px; padding: 2px 6px; background: var(--bg-muted); border: 1px solid var(--border-muted); border-radius: 3px; color: var(--fg-muted); margin-left: 4px; }
+</style>
+</head>
+<body>
+  <button class="btn primary">Run build <span class="mono-badge" style="background:rgba(255,255,255,0.15);border-color:transparent;color:rgba(255,255,255,0.85)">⏎</span></button>
+  <button class="btn secondary">Cancel</button>
+  <button class="btn outline">View logs</button>
+  <button class="btn ghost">Skip</button>
+  <button class="btn danger">Delete</button>
+  <button class="btn primary sm">Save</button>
+  <button class="btn primary lg">Continue →</button>
+</body>
+</html>

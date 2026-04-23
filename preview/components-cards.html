@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-subtle); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 18px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.1em; text-transform: uppercase; }
+  .title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+  .meta { font-size: 12px; color: var(--fg-muted); line-height: 1.55; }
+  .num { font-family: var(--font-mono); font-size: 32px; font-weight: 500; letter-spacing: -0.03em; color: var(--fg); }
+  .unit { font-family: var(--font-mono); font-size: 12px; color: var(--fg-subtle); }
+  .delta { font-family: var(--font-mono); font-size: 11px; color: #3d6a29; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .bar { height: 3px; background: var(--bg-muted); border-radius: 2px; overflow: hidden; }
+  .bar > div { height: 100%; background: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row"><span class="label">Build time</span><span class="delta">↓ 38ms</span></div>
+    <div class="row" style="align-items:baseline;gap:4px"><span class="num">142</span><span class="unit">ms</span></div>
+    <div class="meta">Last run · 2 min ago</div>
+    <div class="bar"><div style="width: 64%"></div></div>
+  </div>
+  <div class="card">
+    <div class="label">Tokens emitted</div>
+    <div class="title">Quiet DS · v0.3.0</div>
+    <div class="meta">312 color tokens, 48 type styles, 12 spacing steps. Source compiled in 142ms.</div>
+    <div class="row" style="margin-top:auto"><span class="unit" style="color:var(--fg-muted)">compiled-at</span><span class="unit">2026-04-23 09:14</span></div>
+  </div>
+</body>
+</html>

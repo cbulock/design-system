@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .mark {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans); font-weight: 600; font-size: 18px; letter-spacing: -0.03em; color: var(--fg);
+  }
+  .glyph {
+    width: 28px; height: 28px; border-radius: 4px;
+    background: var(--gradient-mark);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: var(--font-mono); font-size: 13px; font-weight: 700;
+  }
+  .big .glyph { width: 44px; height: 44px; border-radius: 6px; font-size: 20px; }
+  .big { font-size: 28px; letter-spacing: -0.04em; }
+  .inv { background: #0f0e0c; padding: 14px 18px; border-radius: 6px; color: #f3f1ec; }
+  .dot { width: 6px; height: 6px; background: #7ac74f; border-radius: 50%; margin-left: 2px; }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  .col { display: flex; flex-direction: column; gap: 8px; }
+</style>
+</head>
+<body>
+  <div class="col">
+    <span class="lab">Mark</span>
+    <div class="mark big"><div class="glyph">Q</div>quiet<div class="dot"></div></div>
+  </div>
+  <div class="col">
+    <span class="lab">Inline</span>
+    <div class="mark"><div class="glyph">Q</div>quiet<div class="dot"></div></div>
+  </div>
+  <div class="col">
+    <span class="lab">On dark</span>
+    <div class="mark inv"><div class="glyph">Q</div>quiet<div class="dot"></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css?v=3">
+<style>
+  body { margin: 0; padding: 28px; background: var(--bg); }
+  .row { display: flex; align-items: center; gap: 20px; padding: 10px 0; border-bottom: 1px solid var(--border-muted); min-height: 28px; }
+  .row:last-child { border-bottom: none; }
+  .label { width: 100px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-faint); flex-shrink: 0; }
+  .sample { flex: 1; max-width: 540px; }
+</style>
+</head>
+<body>
+  <div class="row"><span class="label">lead / 14</span><span class="sample" style="font-size:14px;line-height:1.55;color:var(--fg-muted)">Utilitarian baseline. Mona Sans sits clean and dense without shouting.</span></div>
+  <div class="row"><span class="label">body / 13</span><span class="sample" style="font-size:13px;line-height:1.6">Default body size. Paragraph rhythm, forms, dense UI surfaces all land here.</span></div>
+  <div class="row"><span class="label">small / 12</span><span class="sample" style="font-size:12px;line-height:1.55;color:var(--fg-muted)">Secondary copy, metadata, captions.</span></div>
+  <div class="row"><span class="label">caption / 11</span><span class="sample" style="font-size:11px;color:var(--fg-subtle)">Timestamps, helper text, fine print.</span></div>
+  <div class="row"><span class="label">eyebrow</span><span class="sample eyebrow">Section label</span></div>
+  <div class="row"><span class="label">mono / 12</span><span class="sample mono" style="font-size:12px;color:var(--fg)">const value = 42.18; // utilization</span></div>
+</body>
+</html>

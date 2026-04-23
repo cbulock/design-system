@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel {
+    border: 1px solid var(--border); padding: 16px;
+    display: flex; flex-direction: column; gap: 4px; border-radius: var(--radius-lg);
+  }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; display: inline-block; }
+  .row { display: flex; align-items: center; font-size: 13px; color: var(--fg); }
+  .hex { font-family: var(--font-mono); font-size: 11px; color: var(--fg-subtle); margin-left: auto; }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <div class="label">Success · phosphor green</div>
+    <div class="row"><span class="dot" style="background:#7ac74f"></span>Live — build passing<span class="hex">#7ac74f</span></div>
+  </div>
+  <div class="panel">
+    <div class="label">Warning · mustard</div>
+    <div class="row"><span class="dot" style="background:#d4a017"></span>Pending review<span class="hex">#d4a017</span></div>
+  </div>
+  <div class="panel">
+    <div class="label">Danger · red</div>
+    <div class="row"><span class="dot" style="background:#b91c1c"></span>Failed<span class="hex">#b91c1c</span></div>
+  </div>
+  <div class="panel">
+    <div class="label">Accent · burnt orange</div>
+    <div class="row"><span class="dot" style="background:#c2410c"></span>Focus / primary<span class="hex">#c2410c</span></div>
+  </div>
+</body>
+</html>

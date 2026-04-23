@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--bg); display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .group { display: flex; gap: 14px; align-items: center; }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; width: 72px; }
+  .switch { position: relative; width: 36px; height: 20px; background: var(--gray-300); border-radius: 9999px; cursor: pointer; transition: 180ms cubic-bezier(0.2, 0, 0, 1); }
+  .switch.on { background: var(--accent); }
+  .switch::after { content: ''; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: #fff; border-radius: 50%; transition: 180ms cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 1px 2px rgba(15,14,12,0.18); }
+  .switch.on::after { left: 18px; }
+  .seg { display: inline-flex; background: var(--bg-muted); border-radius: 9999px; padding: 3px; border: 1px solid var(--border); }
+  .seg button { background: transparent; border: none; font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--fg-muted); padding: 5px 12px; border-radius: 9999px; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; transition: 150ms; }
+  .seg button.active { background: var(--surface); color: var(--fg); box-shadow: 0 1px 2px rgba(15,14,12,0.06); }
+  .prog { width: 140px; height: 6px; background: var(--bg-muted); border-radius: 9999px; overflow: hidden; border: 1px solid var(--border-muted); }
+  .prog > div { height: 100%; background: var(--accent); border-radius: 9999px; }
+  .avs { display: flex; }
+  .av { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--bg); margin-left: -8px; font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: #fff; display: flex; align-items: center; justify-content: center; }
+  .av:first-child { margin-left: 0; }
+</style>
+</head>
+<body>
+  <div class="group"><span class="label">Switch</span><div class="switch off"></div><div class="switch on"></div></div>
+  <div class="group"><span class="label">Tabs</span><div class="seg"><button class="active">DAY</button><button>WEEK</button><button>MONTH</button></div></div>
+  <div class="group"><span class="label">Progress</span><div class="prog"><div style="width:64%"></div></div></div>
+  <div class="group"><span class="label">Stack</span>
+    <div class="avs">
+      <div class="av" style="background:#c2410c">AL</div>
+      <div class="av" style="background:#42403a">MO</div>
+      <div class="av" style="background:#5e5a4e">SR</div>
+      <div class="av" style="background:#878273">+4</div>
+    </div>
+  </div>
+</body>
+</html>

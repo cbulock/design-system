@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { display: flex; flex-direction: column; gap: 5px; font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--fg-subtle); letter-spacing: 0.08em; text-transform: uppercase; }
+  input, select {
+    font-family: var(--font-sans); font-size: 13px; color: var(--fg);
+    padding: 0 12px; height: 32px; border-radius: 4px;
+    border: 1px solid var(--border); background: var(--surface);
+    transition: all 150ms cubic-bezier(0.2, 0, 0, 1); outline: none;
+    letter-spacing: -0.005em; text-transform: none;
+  }
+  input:hover { border-color: var(--border-strong); }
+  input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent); }
+  .hint { font-family: var(--font-sans); font-size: 11px; color: var(--fg-subtle); font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .check { display: flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: 13px; color: var(--fg); font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .check input { height: 14px; width: 14px; accent-color: var(--accent); margin: 0; border-radius: 3px; }
+</style>
+</head>
+<body>
+  <label>NAME<input placeholder="Your name" value="Alex"><span class="hint">As shown publicly</span></label>
+  <label>EMAIL<input placeholder="you@example.com"><span class="hint">Never shared</span></label>
+  <label>WORKSPACE<input value="alex-space"></label>
+  <label>API KEY<input value="sk_live_••••••••" style="font-family:var(--font-mono);font-size:12px"></label>
+  <label class="check"><input type="checkbox" checked> Enable telemetry</label>
+  <label class="check"><input type="checkbox"> Beta channel</label>
+</body>
+</html>
