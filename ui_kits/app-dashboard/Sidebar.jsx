@@ -8,7 +8,7 @@ function Sidebar({ active, onNav }) {
     ]},
     { label: 'Recent', items: [
       { id: 'atlas', label: 'atlas', dot: '#c2410c' },
-      { id: 'quiet', label: 'quiet-ds', dot: '#7ac74f' },
+        { id: 'emberline', label: 'emberline', dot: '#7ac74f' },
       { id: 'drafts', label: 'field-journal', dot: '#878273' },
     ]},
   ];

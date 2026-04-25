@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>quiet · terminal</title>
+<title>emberline · terminal</title>
 <link rel="stylesheet" href="../../colors_and_type.css">
 <style>
   html, body { height: 100%; background: var(--bg); }
@@ -32,15 +32,15 @@
 
 <script type="text/babel">
 function App() {
-  const [active, setActive] = React.useState(() => localStorage.getItem('quiet.nav') || 'home');
-  const [theme, setTheme] = React.useState(() => localStorage.getItem('quiet.theme') || 'light');
+  const [active, setActive] = React.useState(() => localStorage.getItem('emberline.nav') || 'home');
+  const [theme, setTheme] = React.useState(() => localStorage.getItem('emberline.theme') || 'light');
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('quiet.theme', theme);
+    localStorage.setItem('emberline.theme', theme);
   }, [theme]);
-  React.useEffect(() => { localStorage.setItem('quiet.nav', active); }, [active]);
-  const crumbs = { home: ['home'], inbox: ['inbox'], projects: ['projects'], files: ['files'], atlas: ['projects', 'atlas'], quiet: ['projects', 'quiet-ds'], drafts: ['files', 'field-journal'] }[active] || ['home'];
-  const View = { home: HomeView, inbox: InboxView, projects: ProjectsView, files: ProjectsView, atlas: ProjectsView, quiet: ProjectsView, drafts: InboxView }[active] || HomeView;
+  React.useEffect(() => { localStorage.setItem('emberline.nav', active); }, [active]);
+  const crumbs = { home: ['home'], inbox: ['inbox'], projects: ['projects'], files: ['files'], atlas: ['projects', 'atlas'], emberline: ['projects', 'emberline'], drafts: ['files', 'field-journal'] }[active] || ['home'];
+  const View = { home: HomeView, inbox: InboxView, projects: ProjectsView, files: ProjectsView, atlas: ProjectsView, emberline: ProjectsView, drafts: InboxView }[active] || HomeView;
   return (
     <div className="app">
       <Sidebar active={active} onNav={setActive} />

@@ -1,0 +1,28 @@
+{
+  "name": "emberline-design-system",
+  "version": "0.1.0",
+  "description": "Portable CSS tokens, base styles, and fonts for the Emberline design system.",
+  "keywords": [
+    "design-system",
+    "css",
+    "tokens",
+    "fonts",
+    "emberline"
+  ],
+  "files": [
+    "README.md",
+    "emberline.css",
+    "colors_and_type.css",
+    "styles",
+    "fonts/MonaSans-Variable.woff2",
+    "fonts/JetBrainsMono-Variable.woff2"
+  ],
+  "style": "./emberline.css",
+  "exports": {
+    "./emberline.css": "./emberline.css",
+    "./colors_and_type.css": "./colors_and_type.css",
+    "./styles/fonts.css": "./styles/fonts.css",
+    "./styles/tokens.css": "./styles/tokens.css",
+    "./styles/base.css": "./styles/base.css"
+  }
+}

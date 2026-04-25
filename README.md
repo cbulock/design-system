@@ -1,96 +1,173 @@
-# Quiet Design System
+# Emberline Design System
 
-A personal design system for modern, refined interfaces — inspired by the quiet craft of Linear, Vercel, and Rauno Freiberg's work. Built for one person's use across personal projects.
+Emberline is a portable design system for terminal-leaning product interfaces: warm grays, a burnt orange accent, phosphor green for live states, sharp hairlines, and dense dashboard layouts. The repo now supports two modes at once: a packageable CSS/font surface for other projects, and the existing local preview pages plus browser-based dashboard demo for reference.
 
-## Sources
+## Current direction
 
-This system was created from scratch — no existing codebase, Figma, or brand to port from. Direction was defined by the user:
+This repository currently implements the `v3` terminal/amber direction defined in `styles\tokens.css`.
 
-- **Aesthetic:** refined & quiet, Linear/Vercel/Rauno-adjacent, muted palette, tiny details
-- **Type:** geometric sans only (Geist chosen)
-- **Color:** cool grays + electric cobalt accent, light and dark both polished
-- **Corners:** soft (12–16px)
-- **Motion:** quick & crisp, 150ms ease-out
-- **Target surface:** app dashboard (sidebar + content)
+- **Aesthetic:** terminal, utilitarian, low-noise, Teenage Engineering / Linear-terminal energy
+- **Type:** Mona Sans for UI copy, JetBrains Mono for metadata, counters, timestamps, shortcuts, versions, and other utility text
+- **Color:** warm neutrals, burnt orange accent, phosphor green for success/live states
+- **Corners:** mostly sharp; `4px` controls and `6px` cards
+- **Motion:** fast `100ms` to `150ms` transitions using `cubic-bezier(0.2, 0, 0, 1)`
+- **Target surface:** app dashboard shell with sidebar, top bar, tables, cards, and inbox-style lists
 
-## Content Fundamentals
+## Install in another project
 
-Copy in Quiet is written the way the UI looks: low-key, direct, respectful of the reader. No exclamation points. No marketing voice. No emoji.
+Once this repository is available as a dependency in another app, import either the bundled stylesheet or the individual layers.
 
-- **Voice:** second person for instructions ("Delete this project?"), first-person plural for system statements that matter ("We saved your changes"). System can also be voiceless: "Changes saved."
-- **Casing:** sentence case everywhere — buttons, headings, menu items, section labels. The only uppercase is the tracked eyebrow label (`.eyebrow`).
-- **Tone:** matter-of-fact. Assume the reader is smart and busy. Short sentences. No filler.
-- **Examples:**
-  - ✅ "Changes saved" — not "Your changes have been saved successfully!"
-  - ✅ "Delete project?" — not "Are you sure you want to delete this project?"
-  - ✅ "7 items · updated 2h ago" — prefer mono numerics with middle dots over English
-  - ✅ "Skip" / "Continue" / "Archive" — one word when one word works
-- **Numbers:** always in Geist Mono (`var(--font-mono)`) — counters, versions, timestamps, stats. Uses the `zero` and `ss02` stylistic sets by default (see CSS).
-- **Time:** relative when recent ("2h ago", "Yesterday"), absolute when older. Never "a little while ago."
-- **Punctuation:** `·` middle dot for metadata joins; `→` for outbound links and CTAs; `—` em-dash for asides. No ellipses except in truncation.
-- **Emoji:** none. Icons only (Lucide).
-
-## Visual Foundations
-
-**Colors.** A 13-stop cool gray scale (hue ≈ 240, very low chroma) carries almost all the weight. The accent is a saturated cobalt — `#3b6df6` at the primary stop — used for single elements per view (a CTA, an active nav item, a link) never as a wash. Semantic colors (emerald success, amber warning, red danger) appear only in state badges and messages. Both light and dark themes share identical token names via `data-theme` on `<body>`.
-
-**Type.** Geist variable for everything; Geist Mono for numerics, code, version strings, and timestamps. The display uses negative letter-spacing (`-0.02em` at headings, `-0.04em` at display) — Geist needs it to sit right. Stylistic sets `ss01`, `ss03`, `cv11` are on by default. Body is 14px, lead is 17px, never smaller than 11px.
-
-**Spacing.** 4px base grid. Most dense UI lives on `space-2 / space-3 / space-4` (8/12/16); card padding is `space-4` (16px); page padding is `space-6` (24px).
-
-**Backgrounds.** Flat. No gradients (except the occasional brand avatar). No illustrations. No grain. Surfaces are differentiated by a single step in the gray scale — `--bg` vs. `--bg-subtle` vs. `--bg-muted` — and by hairline borders (`1px solid var(--border)`).
-
-**Animation.** 150ms, `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out). Used on: hover color transitions, switch knob travel, sidebar collapse, menu open/close. Fast enough to feel instant, long enough to soften. No bounces. No parallax. No scroll-jacking.
-
-**Hover states.** Surfaces lift by moving from `--bg` to `--bg-muted` (never by changing shadow). Buttons shift one step in their own palette (`--accent` → `--accent-hover`). Borders strengthen from `--border` → `--border-strong`.
-
-**Press states.** No shrink transform. One more step of color (`--accent-press`). That's it.
-
-**Borders.** Hairline (`1px`) everywhere structural. Two weights — `--border` (default) and `--border-strong` (emphasized / hover) — plus `--border-muted` for intra-card dividers that should be nearly invisible.
-
-**Shadows.** Layered, low-opacity (`rgba(9,9,11, 0.04–0.16)`). Five elevations: `xs` (hairline lift), `sm` (resting card), `md` (hover), `lg` (popover), `xl` (modal). Dark theme shadows are pure black with higher opacity; in dark, shadows mostly communicate *depth*, not light.
-
-**Inner highlight.** Primary buttons carry an `inset 0 1px 0 rgba(255,255,255,0.15)` to catch the light at their top edge — a small Linear/Rauno-ism that makes them feel lit from within.
-
-**Transparency / blur.** Reserved for overlays (`--surface-overlay`: 85% with `backdrop-filter: blur(12px)` when you need it). Not used decoratively.
-
-**Imagery.** No stock photography. When images appear, they should be warm, grainless, and either full-bleed or bounded by the same 12px radius as cards. Prefer monochrome or single-accent. No drop shadows on imagery.
-
-**Corner radii.** `lg` (12px) is the default for cards and inputs. `sm` (6px) for menu items and tooltips. `full` (pill) only on avatars, status dots, progress bars, and the switch knob. Buttons use `md`/`lg`/`sm` by size.
-
-**Cards.** `1px solid var(--border)` + `--shadow-sm` + `--radius-lg` + `var(--surface)`. On hover: border goes to `--border-strong`, shadow to `--shadow-md`. Nothing else.
-
-**Layout rules.** Single fixed left sidebar (240px expanded, 56px collapsed). Top bar is 52px, always. Page content has 24px padding. Grids use 12px–16px gutters. Never wider than 1400px for reading content.
-
-## Iconography
-
-Quiet uses **Lucide** — a single, coherent outline icon set with 1.75 stroke weight, matching Geist's optical feel.
-
-- **Distribution.** A hand-curated subset is baked into `ui_kits/app-dashboard/Icon.jsx` for offline use. For broader needs, load Lucide from CDN: `https://unpkg.com/lucide@latest` or use the SVG sprite.
-- **Sizing.** 14px in dense inline contexts (table rows, chips), 16px as default (buttons, nav), 18–20px for headers and empty states. Color is `var(--fg-muted)` at rest, `var(--fg)` on hover, `var(--accent)` when active.
-- **Stroke.** Always 1.75. Do not mix stroke weights.
-- **Fills.** Avoid filled icons unless the icon is conveying a status (solid dot for "unread," filled checkmark for "verified"). Outline by default.
-- **Unicode chars.** Allowed sparingly for glyphs Lucide doesn't cover: `⌘`, `⌥`, `⇧`, `⌫`, `→`, `·`. Always in `var(--font-mono)`.
-- **Emoji.** Never.
-- **SVG vs PNG.** Always SVG. Icons are currency; they must be crisp at any size.
-- **Logo.** The `q` glyph + wordmark in `preview/brand-logo.html` is a placeholder. Replace with a real mark when identity is finalized.
-
-## Index
-
+```bash
+npm install ../design-system
 ```
-colors_and_type.css         Core tokens, themes, semantic type
-fonts/                      Geist + Geist Mono variable woff2
-preview/                    Design System tab cards (type, color, spacing, components, brand)
+
+### Full bundle
+
+Import the full Emberline surface when you want fonts, tokens, and base element styling together.
+
+```js
+import 'emberline-design-system/emberline.css';
+```
+
+### Layered imports
+
+Import individual layers when you want to control how much global styling you take on.
+
+```js
+import 'emberline-design-system/styles/fonts.css';
+import 'emberline-design-system/styles/tokens.css';
+import 'emberline-design-system/styles/base.css';
+```
+
+- `styles/fonts.css` registers the bundled Mona Sans and JetBrains Mono font faces
+- `styles/tokens.css` defines the color, spacing, type, radius, shadow, and theme variables
+- `styles/base.css` applies the semantic typography, link, selection, box-sizing, and grid utility styles
+
+Set the theme with `data-theme` on the root element:
+
+```html
+<html data-theme="dark">
+```
+
+or at runtime:
+
+```js
+document.documentElement.setAttribute('data-theme', 'dark');
+```
+
+## Working locally
+
+There is no build, lint, or test script configured in this repository.
+
+- Open `ui_kits\app-dashboard\index.html` directly in a browser to view the interactive dashboard demo.
+- Open files in `preview\` directly in a browser to inspect tokens and component specimens.
+- The dashboard demo uses React 18, ReactDOM, and Babel from CDNs, so it expects network access when loaded.
+
+## Repository structure
+
+```text
+emberline.css              Canonical bundled CSS entrypoint for consumers
+colors_and_type.css        Compatibility wrapper used by the local previews and demo
+styles/
+  fonts.css                Font-face declarations
+  tokens.css               Theme and design token variables
+  base.css                 Semantic base styles and utilities
+fonts/                      Local font assets used by the system
+preview/                    Standalone HTML specimens for colors, type, spacing, components, and brand
 ui_kits/
-  app-dashboard/            Sidebar app shell with home / inbox / projects views
-    Icon.jsx, Primitives.jsx, Sidebar.jsx, TopBar.jsx, Views.jsx
-    index.html              Interactive demo — click nav, toggle light/dark
-SKILL.md                    Agent-invocable skill file
+  app-dashboard/            Browser-loaded React prototype
+    Icon.jsx                Lucide-style icon paths exposed on window
+    Primitives.jsx          Shared controls like Button, Badge, Input, Switch, Avatar, Kbd
+    Sidebar.jsx             Left navigation shell
+    TopBar.jsx              Breadcrumbs, theme toggle, top actions
+    Views.jsx               Home, Inbox, Projects, and supporting view components
+    index.html              Demo entry point
+SKILL.md                    Agent skill guidance
 README.md                   This file
 ```
 
+## How the system is wired
+
+### Shared tokens
+
+The reusable CSS surface is split into three source files and two aggregate entrypoints:
+
+- `styles\fonts.css` for font-face declarations
+- `styles\tokens.css` for scales, theme variables, and semantic tokens
+- `styles\base.css` for semantic type, base element rules, and utilities
+- `emberline.css` as the canonical bundle for consumers
+- `colors_and_type.css` as the local compatibility wrapper for the preview pages and dashboard demo
+
+Both the preview pages and the dashboard demo consume the same CSS variable names, so token edits still propagate across the repo.
+
+### Preview pages
+
+The files in `preview\` are standalone HTML pages. Each one imports `..\colors_and_type.css` and adds only the local styles needed to showcase a specific part of the system. They are documentation artifacts, not generated docs.
+
+### Dashboard UI kit
+
+`ui_kits\app-dashboard\index.html` is a self-contained browser prototype. It:
+
+1. loads `..\..\colors_and_type.css`
+2. pulls React 18, ReactDOM, and Babel from CDNs
+3. loads the JSX files as `text/babel` scripts
+4. composes them in a single `App()` function
+
+The JSX files are intentionally simple browser scripts, not modules. Shared pieces are attached to `window` rather than imported/exported through a bundler.
+
+Theme state and the active nav item are stored in `localStorage` as `emberline.theme` and `emberline.nav`.
+
+## Content
+
+Copy stays terse and matter-of-fact.
+
+- sentence case for normal UI text
+- uppercase mono labels for utility headers and section chrome
+- no emoji
+- compact metadata joins like `3 items · build passing`
+- mono treatment for timestamps, counters, version strings, and keyboard shortcuts
+
+## Visual foundations
+
+- **Neutrals:** warm gray scale from `--gray-50` through `--gray-950`
+- **Accent:** burnt orange with `--amber-500` as the primary accent stop
+- **Success/live:** phosphor green, used sparingly
+- **Typography:** compact scale centered around `13px` body text and `14px` UI labels
+- **Spacing:** 4px grid with most dense UI at `8px`, `12px`, `16px`, and `24px`
+- **Radii:** `4px` controls, `6px` cards, pills only where clearly functional
+- **Borders:** hairline-first system; borders do more work than shadows
+- **Shadows:** very restrained and mostly structural
+- **Motion:** no bounce, no scale-on-press, quick state changes only
+
+## Iconography
+
+The dashboard demo uses a hand-curated Lucide-style icon subset in `ui_kits\app-dashboard\Icon.jsx`.
+
+- stroke width stays at `1.75`
+- default icon sizes are mostly `14px` and `16px`
+- icons remain outline-first
+- Unicode utility glyphs like `⌘`, `→`, and `·` are acceptable when they fit the mono/system language
+
+## Fonts
+
+The current shared CSS uses:
+
+- `Mona Sans` from `fonts\MonaSans-Variable.woff2`
+- `JetBrains Mono` from `fonts\JetBrainsMono-Variable.woff2`
+
+Geist font assets are still present in `fonts\`, but they are not part of the packaged Emberline CSS surface.
+
+## Playwright MCP
+
+This workspace includes Playwright MCP configuration in `.vscode\mcp.json` so VS Code can expose Playwright tools to Copilot at the workspace level.
+
+After opening the repo in VS Code:
+
+1. approve the Playwright MCP server when VS Code prompts for trust
+2. use Copilot chat with Playwright tools against the static preview pages or the dashboard demo
+
 ## Known caveats
 
-- **Fonts.** Geist is pulled from the official npm package under OFL-1.1. The variable font supports 100–900.
-- **Logo.** Placeholder `q` glyph only. Swap in a real mark when ready.
-- **Imagery.** No real imagery included — the system assumes you bring your own.
+- The dashboard demo depends on CDN-hosted React tooling.
+- The logo remains a placeholder mark.
+- There is no automated build, lint, or test script in the repo yet.

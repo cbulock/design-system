@@ -54,7 +54,7 @@ function HomeView() {
           </div>
           {[
             { who: 'morgan', color: '#c2410c', what: 'shipped the design tokens refactor', when: '2h', tag: 'push' },
-            { who: 'sam',    color: '#42403a', what: 'commented on quiet-ds review',        when: '4h', tag: 'note' },
+            { who: 'sam',    color: '#42403a', what: 'commented on emberline review',       when: '4h', tag: 'note' },
             { who: 'jamie',  color: '#5e5a4e', what: 'created 3 components in atlas',       when: '1d', tag: 'new' },
             { who: 'you',    color: '#878273', what: 'archived 2 drafts in inbox',          when: '2d', tag: 'arch' },
           ].map((a, i, arr) => (
@@ -94,7 +94,7 @@ function HomeView() {
 
 function ProjectsView() {
   const rows = [
-    { name: 'quiet-ds',       owner: 'alex',   status: 'live',     tone: 'success', updated: '2h',  ver: 'v0.3.0', color: '#c2410c' },
+    { name: 'emberline',      owner: 'alex',   status: 'live',     tone: 'success', updated: '2h',  ver: 'v0.3.0', color: '#c2410c' },
     { name: 'atlas',          owner: 'morgan', status: 'review',   tone: 'warning', updated: '5h',  ver: 'v1.4.0', color: '#42403a' },
     { name: 'ember-notes',    owner: 'alex',   status: 'draft',    tone: 'default', updated: '1d',  ver: 'v0.0.3', color: '#5e5a4e' },
     { name: 'field-journal',  owner: 'sam',    status: 'draft',    tone: 'default', updated: '3d',  ver: 'v0.1.0', color: '#878273' },
@@ -136,7 +136,7 @@ function ProjectsView() {
 function InboxView() {
   const items = [
     { from: 'morgan', color: '#c2410c', subj: 'token pipeline ready for review', preview: 'pushed the refactored build step — 40% faster. mind taking a look before friday?', time: '09:14', unread: true },
-    { from: 'sam',    color: '#42403a', subj: 'quiet-ds v0.3 — notes',            preview: 'a few small things on the button states. nothing blocking, but worth discussing.', time: '08:02', unread: true },
+    { from: 'sam',    color: '#42403a', subj: 'emberline v0.3 — notes',           preview: 'a few small things on the button states. nothing blocking, but worth discussing.', time: '08:02', unread: true },
     { from: 'jamie',  color: '#5e5a4e', subj: 'atlas: 3 new components',          preview: 'added card, sheet, and popover. followed the same patterns as the existing set.',  time: 'yda',  unread: true },
     { from: 'system', color: '#878273', subj: 'weekly digest',                    preview: 'shipped 7 · reviewed 12 · closed 3 threads this week.', time: 'mon' },
   ];
