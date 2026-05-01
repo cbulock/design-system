@@ -1,25 +1,25 @@
 {
-  "name": "emberline-design-system",
+  "name": "cindor-design-system",
   "version": "0.1.0",
-  "description": "Portable CSS tokens, base styles, and fonts for the Emberline design system.",
+  "description": "Portable CSS tokens, base styles, and fonts for the Cindor design system.",
   "keywords": [
     "design-system",
     "css",
     "tokens",
     "fonts",
-    "emberline"
+    "cindor"
   ],
   "files": [
     "README.md",
-    "emberline.css",
+    "cindor.css",
     "colors_and_type.css",
     "styles",
     "fonts/MonaSans-Variable.woff2",
     "fonts/JetBrainsMono-Variable.woff2"
   ],
-  "style": "./emberline.css",
+  "style": "./cindor.css",
   "exports": {
-    "./emberline.css": "./emberline.css",
+    "./cindor.css": "./cindor.css",
     "./colors_and_type.css": "./colors_and_type.css",
     "./styles/fonts.css": "./styles/fonts.css",
     "./styles/tokens.css": "./styles/tokens.css",

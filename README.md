@@ -1,6 +1,6 @@
-# Emberline Design System
+# Cindor Design System
 
-Emberline is a portable design system for terminal-leaning product interfaces: warm grays, a burnt orange accent, phosphor green for live states, sharp hairlines, and dense dashboard layouts. The repo now supports two modes at once: a packageable CSS/font surface for other projects, and the existing local preview pages plus browser-based dashboard demo for reference.
+Cindor is a portable design system for terminal-leaning product interfaces: warm grays, a burnt orange accent, phosphor green for live states, sharp hairlines, and dense dashboard layouts. The repo now supports two modes at once: a packageable CSS/font surface for other projects, and the existing local preview pages plus browser-based dashboard demo for reference.
 
 ## Current direction
 
@@ -23,10 +23,10 @@ npm install ../design-system
 
 ### Full bundle
 
-Import the full Emberline surface when you want fonts, tokens, and base element styling together.
+Import the full Cindor surface when you want fonts, tokens, and base element styling together.
 
 ```js
-import 'emberline-design-system/emberline.css';
+import 'cindor-design-system/cindor.css';
 ```
 
 ### Layered imports
@@ -34,9 +34,9 @@ import 'emberline-design-system/emberline.css';
 Import individual layers when you want to control how much global styling you take on.
 
 ```js
-import 'emberline-design-system/styles/fonts.css';
-import 'emberline-design-system/styles/tokens.css';
-import 'emberline-design-system/styles/base.css';
+import 'cindor-design-system/styles/fonts.css';
+import 'cindor-design-system/styles/tokens.css';
+import 'cindor-design-system/styles/base.css';
 ```
 
 - `styles/fonts.css` registers the bundled Mona Sans and JetBrains Mono font faces
@@ -66,7 +66,7 @@ There is no build, lint, or test script configured in this repository.
 ## Repository structure
 
 ```text
-emberline.css              Canonical bundled CSS entrypoint for consumers
+cindor.css                 Canonical bundled CSS entrypoint for consumers
 colors_and_type.css        Compatibility wrapper used by the local previews and demo
 styles/
   fonts.css                Font-face declarations
@@ -95,7 +95,7 @@ The reusable CSS surface is split into three source files and two aggregate entr
 - `styles\fonts.css` for font-face declarations
 - `styles\tokens.css` for scales, theme variables, and semantic tokens
 - `styles\base.css` for semantic type, base element rules, and utilities
-- `emberline.css` as the canonical bundle for consumers
+- `cindor.css` as the canonical bundle for consumers
 - `colors_and_type.css` as the local compatibility wrapper for the preview pages and dashboard demo
 
 Both the preview pages and the dashboard demo consume the same CSS variable names, so token edits still propagate across the repo.
@@ -115,7 +115,7 @@ The files in `preview\` are standalone HTML pages. Each one imports `..\colors_a
 
 The JSX files are intentionally simple browser scripts, not modules. Shared pieces are attached to `window` rather than imported/exported through a bundler.
 
-Theme state and the active nav item are stored in `localStorage` as `emberline.theme` and `emberline.nav`.
+Theme state and the active nav item are stored in `localStorage` as `cindor.theme` and `cindor.nav`.
 
 ## Content
 
@@ -155,7 +155,7 @@ The current shared CSS uses:
 - `Mona Sans` from `fonts\MonaSans-Variable.woff2`
 - `JetBrains Mono` from `fonts\JetBrainsMono-Variable.woff2`
 
-Geist font assets are still present in `fonts\`, but they are not part of the packaged Emberline CSS surface.
+Geist font assets are still present in `fonts\`, but they are not part of the packaged Cindor CSS surface.
 
 ## Playwright MCP
 
